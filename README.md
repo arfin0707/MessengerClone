@@ -1,7 +1,8 @@
 # MessengerClone
 Built a functional clone of Messenger. Focused on UI/UX design and performance optimization in Android Studio
 
-<img width="auto" alt="messenger1" src="https://github.com/user-attachments/assets/c17d4f8b-dc9e-4ccc-bdfd-decdb89858cd" />
-<img width="auto" alt="messenger4" src="https://github.com/user-attachments/assets/729eece7-4a21-411c-a136-572b45401cf1" />
-<img width="auto" alt="messenger3" src="https://github.com/user-attachments/assets/fb329b3e-249f-45be-9ef6-7698936bcd88" />
-<img width="auto" alt="messenger2" src="https://github.com/user-attachments/assets/b2ee1729-802a-4ab0-bcf3-ee5825367564" />
+<img width="217" alt="messenger1" src="https://github.com/user-attachments/assets/058588a5-eeef-4cd5-b9f1-a788b580e4d9" />
+<img width="217" alt="messenger2" src="https://github.com/user-attachments/assets/ff7c1c00-64f4-4191-bd77-42eec5f8a741" />
+<img width="218" alt="messenger3" src="https://github.com/user-attachments/assets/63f96f30-0843-4b56-b450-f30043673580" />
+<img width="186" alt="messenger4" src="https://github.com/user-attachments/assets/eb3ebf12-4d98-4172-8308-780ea04552f2" />
+
