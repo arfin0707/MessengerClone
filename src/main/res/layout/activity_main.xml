@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+
+    <!-- Main Top Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/topIcon"
+        >
+
+        <!-- Menu Icon -->
+        <ImageView
+            android:id="@+id/menu"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/menu"
+            app:layout_constraintEnd_toStartOf="@+id/image_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/topIcon" />
+
+        <!-- Title TextView -->
+
+        <!-- Pencil Icon -->
+        <TextView
+            android:id="@+id/image_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Chats"
+            android:textColor="#fff"
+            android:textSize="22dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/pencil"
+            app:layout_constraintStart_toEndOf="@+id/menu"
+            app:layout_constraintTop_toTopOf="@+id/topIcon" />
+
+        <ImageView
+            android:id="@+id/pencil"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/pencil"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/image_name"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Search Text Input -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        app:boxStrokeColor="#000"
+        app:hintEnabled="false"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        app:boxBackgroundColor="#626262"
+        app:boxCornerRadiusBottomEnd="20dp"
+        app:boxCornerRadiusBottomStart="20dp"
+        app:boxCornerRadiusTopEnd="20dp"
+        app:boxCornerRadiusTopStart="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topIcon">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:textColorHint="#ddd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/search_2"
+            android:drawablePadding="10dp"
+            android:hint="Search"
+            android:backgroundTint="#626262"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Horizontal RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerv_view_h"
+        android:layout_width="0dp"
+        android:clipToPadding="false"
+        android:layout_height="120dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="15dp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerv_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textInputLayout"
+        tools:listitem="@layout/rv_linear_horizontal_scroll" />
+
+    <!-- Vertical RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerv_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/lasticon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerv_view_h"
+        tools:listitem="@layout/rv_linear_vertical_scroll" />
+
+    <!-- Bottom Icon Bar -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lasticon"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toTopOf="@+id/lastText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerv_view">
+
+        <!-- Chat Icon -->
+        <ImageView
+            android:id="@+id/chat"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="0dp"
+            android:src="@drawable/chat"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/stories"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Stories Icon -->
+        <ImageView
+            android:id="@+id/stories"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:layout_marginEnd="0dp"
+            android:src="@drawable/stories"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/chat" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lastText"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="3dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lasticon">
+
+        <!-- Chat Icon -->
+        <TextView
+            android:id="@+id/chatT"
+            android:layout_width="38dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="0dp"
+            android:text="Chats"
+            android:textColor="#2196F3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/storiesT"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Stories Icon -->
+        <TextView
+            android:id="@+id/storiesT"
+            android:layout_width="45dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="0dp"
+            android:text="Stories"
+            android:textColor="#ddd"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/chatT" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--
+</androidx.core.widget.NestedScrollView>
+-->
+
+
